@@ -1,6 +1,17 @@
+:root {
+    --background: #B8BACF;
+    --questionbox: #999AC6;
+}
+
+body {
+    background-color: var(--background);
+}
+
 * {
     box-sizing: border-box;
 }
+
+
 
 .center {
     text-align: center;
