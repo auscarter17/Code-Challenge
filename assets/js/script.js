@@ -4,9 +4,15 @@ const startButtonEl = document.querySelector("#btnBegin");
 
 const timerEl = document.querySelector("#timer")
 
+const quizQuestionEl = document.querySelector("#quizQuestion");
+
 var interval;
 var count = 60;
 var time = null;
+
+var questions = [
+    
+]
 
 function startTimer() {
     time = setInterval(countDown, 1000);
@@ -19,8 +25,11 @@ function begin() {
 
 function countDown() {
     document.getElementById("timer").innerHTML =
-    "<p> Time Left: " + count + " second(s) left</p>";
+    "<p>" + count + " seconds left!</p>";
     count--;
+    if (count < 0) {
+        alert("You ran out of time!");
+    }
 };
 
 function hide(element) {

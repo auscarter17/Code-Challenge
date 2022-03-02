@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="timer">
+    <div id="timer" class="center">
         <!-- shows remaining time -->
     </div>
 
@@ -22,15 +25,24 @@
             
         </header>
         
-        <h2>How it works:</h2>
-        <p>Answer questions correctly to increase your score.</p>
-        <p>Be careful, for every incorrect answer, you'll lose time!</p>
-        <p>You will start with 60 seconds and lose 10 seconds for every incorrect answer.</p>
-        <p>Click the button to begin.</p>
-        <button id="btnBegin" class="btn">Begin Quiz</button>
+        <section class="instruction">
+            <h2>How it works:</h2>
+            <p>Answer questions correctly to increase your score.</p>
+            <p>Be careful, for every incorrect answer, you'll lose time!</p>
+            <p>You will start with 60 seconds and lose 10 seconds for every incorrect answer.</p>
+            <p>Click the button to begin.</p>
+            <button id="btnBegin" class="btn">Begin Quiz</button>
+        </section>
 
     </div>
 
+    <div class="quizbox" id="quizQuestion">
+        <div class="question" id="problem"><h2>questionsample</h2></div>
+            <div class="answer" id="solution1">samplea</div>
+            <div class="answer" id="solution2">sampleb</div>        
+            <div class="answer" id="solution3">samplec</div>
+            <div class="answer" id="solution4">sampled</div>
+    </div>
     
     <script src="./assets/js/script.js"></script>
 </body>

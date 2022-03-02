@@ -5,6 +5,8 @@
 
 body {
     background-color: var(--background);
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 26px;
 }
 
 * {
@@ -17,7 +19,29 @@ body {
     text-align: center;
 }
 
+.instruction {
+    border: #000000 solid 1px;
+    margin: 5px;
+    display: inline-block;
+    padding: 20px;
+}
+
 .btn {
     margin: 0 auto;
     display: block;
+}
+
+.quizbox {
+    text-align: center;
+    border: #000000 solid 1px;
+    margin: 5px;
+    padding: 20px;
+}
+
+.answer {
+    border: #ffffff solid 1px;
+    max-width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
