@@ -2,7 +2,7 @@ const startEl = document.querySelector("#startscreen");
 
 const startButtonEl = document.querySelector("#btnBegin");
 
-const timerEl = document.querySelector("#timer")
+const timerEl = document.querySelector("#timer");
 
 const quizQuestionEl = document.querySelector("#quizQuestion");
 
@@ -91,32 +91,37 @@ function countDown() {
 // display questions/answers from question array
 function fetchQuestion() {
 
-    
-
     if (!quizQuestion[currentQuestion]) {
-         return endQuiz();
+        return endQuiz();
     }
     //get question text and display it at top of quiz area
     document.getElementById("problem").innerHTML = quizQuestion[currentQuestion].question;
 
     //display answers and record user submission
     document.getElementById("solution1").innerHTML = quizQuestion[currentQuestion].answers.a;
-    solution1.addEventListener("click", function() {
-        userInput = "a";
-        checkAnswer();
-    });
+    solution1.addEventListener("click", markAnswerA);
+
     document.getElementById("solution2").innerHTML = quizQuestion[currentQuestion].answers.b;
-    solution2.addEventListener("click", function() {
-        userInput = "b";
-        checkAnswer();
-    });
+    solution2.addEventListener("click", markAnswerB); 
+
     document.getElementById("solution3").innerHTML = quizQuestion[currentQuestion].answers.c;
-    solution3.addEventListener("click", function() {
-        userInput = "c";
-        checkAnswer();
-    });
+    solution3.addEventListener("click", markAnswerC); 
 };
     
+function markAnswerA() {
+    userInput = "a";
+        checkAnswer();
+}
+
+function markAnswerB() {
+    userInput = "b";
+        checkAnswer();
+}
+
+function markAnswerC() {
+    userInput = "c";
+        checkAnswer();
+}
 // checks userInput against correct solution
 function checkAnswer() {
     if (userInput == quizQuestion[currentQuestion].solution) {
@@ -127,12 +132,14 @@ function checkAnswer() {
         count = count-10;
     }
     console.log(userInput);
+    debugger;
     nextQuestion();
 };
 
 //moves to next question in quiz array
 function nextQuestion() {
     userInput = undefined;
+    console.log(userInput)
     currentQuestion ++;
     fetchQuestion();
 };
