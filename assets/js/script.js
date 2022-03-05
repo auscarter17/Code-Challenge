@@ -77,6 +77,7 @@ function begin() {
     startTimer();
 };
 
+
 // shows the time remaining and alerts the user when time has run out
 function countDown() {
     timerEl.innerHTML =
@@ -126,13 +127,12 @@ function markAnswerC() {
 function checkAnswer() {
     if (userInput == quizQuestion[currentQuestion].solution) {
         alert("Correct!");
-        userScore ++;
+        userScore = (userScore + 10);
     } else {
         alert("Incorrect. -10 seconds!");
         count = count-10;
     }
     console.log(userInput);
-    debugger;
     nextQuestion();
 };
 
@@ -143,6 +143,13 @@ function nextQuestion() {
     currentQuestion ++;
     fetchQuestion();
 };
+
+function endQuiz() {
+    clearInterval(time);
+    userScore = (userScore + count);
+    alert("You reached the end!");
+    alert("Your final score was " + userScore + ".");
+}
 
 function hide(element) {
     element.style.display = "none";
@@ -155,6 +162,10 @@ function show(element) {
 // function for start button that begins quiz
 startButtonEl.addEventListener("click", function() {
     hide(startScreen);
+    quizQuestionEl.style.display = 'block';
     begin();
     fetchQuestion();
 });
+
+
+
