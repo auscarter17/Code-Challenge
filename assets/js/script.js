@@ -104,7 +104,7 @@ function countDown() {
     count--;
     if (count < 0) {
         alert("You ran out of time!");
-        clearInterval(time);
+        endQuiz();
     }
 };
 
@@ -112,6 +112,7 @@ function countDown() {
 function fetchQuestion() {
 
     if (!quizQuestion[currentQuestion]) {
+        alert("You reached the end!");
         return endQuiz();
     }
     //get question text and display it at top of quiz area
@@ -168,7 +169,6 @@ function nextQuestion() {
 function endQuiz() {
     clearInterval(time);
     userScore = (userScore + count);
-    alert("You reached the end!");
     alert("Your final score was " + userScore + ".");
     userName = prompt("Enter your initials.");
 
@@ -193,6 +193,8 @@ function endQuiz() {
         scoreBoardEl.append(li);
     }
 };
+
+
 
 // hides rules when quiz begins
 function hide(element) {
