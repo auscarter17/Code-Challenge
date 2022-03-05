@@ -6,14 +6,14 @@ const timerEl = document.querySelector("#timer")
 
 const quizQuestionEl = document.querySelector("#quizQuestion");
 
-let currentQuestion = 0;
+var currentQuestion = 0;
 
 var interval;
 var count = 60;
 var time = null;
 userScore = 0;
 
-userInput = "";
+var userInput = "";
 
 var quizQuestion = [
     {
@@ -79,7 +79,7 @@ function begin() {
 
 // shows the time remaining and alerts the user when time has run out
 function countDown() {
-    document.getElementById("timer").innerHTML =
+    timerEl.innerHTML =
     "<p>" + count + " seconds left!</p>";
     count--;
     if (count < 0) {
@@ -94,7 +94,7 @@ function fetchQuestion() {
     
 
     if (!quizQuestion[currentQuestion]) {
-        return endQuiz();
+         return endQuiz();
     }
     //get question text and display it at top of quiz area
     document.getElementById("problem").innerHTML = quizQuestion[currentQuestion].question;
@@ -117,23 +117,24 @@ function fetchQuestion() {
     });
 };
     
+// checks userInput against correct solution
 function checkAnswer() {
     if (userInput == quizQuestion[currentQuestion].solution) {
         alert("Correct!");
         userScore ++;
-        nextQuestion();
-    } else if (userInput != quizQuestion[currentQuestion].solution) {
+    } else {
         alert("Incorrect. -10 seconds!");
         count = count-10;
-        nextQuestion();
     }
-    console.log(userScore);
+    console.log(userInput);
+    nextQuestion();
 };
 
+//moves to next question in quiz array
 function nextQuestion() {
-    currentQuestion++;
-    fetchQuestion();
     userInput = undefined;
+    currentQuestion ++;
+    fetchQuestion();
 };
 
 function hide(element) {
