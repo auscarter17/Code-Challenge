@@ -16,7 +16,7 @@ Upon opening the page, you will be greeted with a starting screen that gives an 
 As each question appears, you will be given three possible solutions. Choose the correct answer of the ones available. As you mouse over each answer, it will highlight to indicate you are about to select the answer that you intended. After you select your answer, an alert will appear letting you know whether you've answered correctly, or answered incorrectly and suffered a penalty. 
 
 ## Links and screenshot
-The GitHub repository for the page can be found [here](https://github.com/auscarter17/Code-Challenge). 
+The GitHub repository for the page can be found [here](https://github.com/auscarter17/Code-Quiz). 
 
 The live application can be found [here](https://auscarter17.github.io/Code-Quiz/).
 
