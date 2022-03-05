@@ -18,6 +18,6 @@ As each question appears, you will be given three possible solutions. Choose the
 ## Links and screenshot
 The GitHub repository for the page can be found [here](https://github.com/auscarter17/Code-Challenge). 
 
-The live application can be found [here](https://auscarter17.github.io/Code-Challenge/).
+The live application can be found [here](https://auscarter17.github.io/Code-Quiz/).
 
 ![screenshot of webpage](/assets/images/codequizscreenshot.jpg)
